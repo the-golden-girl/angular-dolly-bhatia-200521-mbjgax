@@ -1,0 +1,66 @@
+<!--  Candidates Heading -->
+<h1>Candidates</h1>
+
+<!--  checkbox -->
+<input id="maleCheckbox" #maleCheckbox
+      type="checkbox"
+      value="Male"
+      (click)='onCheckboxSelection("Male")' />Male
+<input id="femaleCheckbox" #femaleCheckbox
+      type="checkbox"
+      value="Female"
+      (click)='onCheckboxSelection("Female")'/>Female
+
+<!--  search input box -->
+<input type='search'
+      placeholder='What are you looking for ?'
+      [(ngModel)]="searchValue"
+      (keyup)="onSearch()">
+
+<!--  table -->
+<table>
+  <tr>
+    <th>#</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Gender</th>
+  </tr>
+  <tr *ngFor='let item of data'>
+    <td>{{item.id}}</td>
+    <td>{{item.first_name}}</td>
+    <td>{{item.last_name}}</td>
+    <td>{{item.email}}</td>
+    <td>{{item.gender}}</td>
+  </tr>
+</table>
+
+<!--  Add New Candidate Heading -->
+<h2>Add New Candidate</h2>
+
+<!-- add user form -->
+<form [formGroup]="addForm">
+  <input type='text'
+        placeholder='First Name'
+        formControlName="firstName"/>
+  <input type='text'
+        placeholder='Last Name'
+        formControlName="lastName"/>
+  <input type='text'
+        placeholder='Email'
+        formControlName="email"/>
+  <br>
+  <input type='radio'
+        name='gender'
+        value='male'
+        formControlName="gender"/>Male
+  <input type='radio'
+        name='gender'
+        value='female'
+        formControlName="gender"/>Female
+  <br>
+  <button type="submit" (click)="onAdd()"
+    style="background-color: green">Add</button>
+  <button type="reset" (click)="onCancel()"
+  style="margin-left:30px;">Cancel</button>
+</form>
