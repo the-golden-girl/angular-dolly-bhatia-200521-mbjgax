@@ -19,7 +19,7 @@ export class HelloComponent implements OnInit {
   originalData;
   isMaleSelected: boolean = false;
   isFemaleSelected: boolean = false;
-  searchValue: string;
+  searchValue: string; 
 
   ngOnInit() {
     this.originalData = new Object(this.data);
