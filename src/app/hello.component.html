@@ -5,7 +5,7 @@
 <input id="maleCheckbox" #maleCheckbox
       type="checkbox"
       value="Male"
-      (click)='onCheckboxSelection("Male")' />Male
+      (click)='onCheckboxSelection("Male")'/>Male
 <input id="femaleCheckbox" #femaleCheckbox
       type="checkbox"
       value="Female"
@@ -45,22 +45,26 @@
         formControlName="firstName"/>
   <input type='text'
         placeholder='Last Name'
-        formControlName="lastName"/>
+        formControlName="lastName"
+        style="margin-left: 10px;"/>
+  <br>
   <input type='text'
         placeholder='Email'
-        formControlName="email"/>
+        formControlName="email"
+        style="margin-top: 10px;"/>
   <br>
   <input type='radio'
         name='gender'
         value='Male'
-        formControlName="gender"/>Male
+        formControlName="gender"
+        style="margin-top: 10px;"/>Male
   <input type='radio'
         name='gender'
         value='Female'
         formControlName="gender"/>Female
   <br>
   <button type="submit" (click)="onAdd()"
-    style="background-color: seagreen">Add</button>
+    style="background-color: seagreen; margin-top: 10px;">Add</button>
   <button type="reset" (click)="onCancel()"
   style="margin-left:30px;">Cancel</button>
 </form>
